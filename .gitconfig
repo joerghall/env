@@ -1,0 +1,18 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = joerghall
+	email = joerghall@users.noreply.github.comi
+
+[push]
+        default = simple
+[alias]
+        ll = log --pretty='format:%h %<(12,trunc)%ce %cd %s' --date=short
+        spull = !git pull --rebase && git submodule sync --recursive && git submodule update --init --rebase --recursive
+        spush = push --recurse-submodules=on-demand
+        scheckout = !sh -c \"git checkout $1 $2 $3 $4 $5 $6 && git submodule sync --recursive && git submodule update --init\"
+[status]
+        submoduleSummary = true
+[diff]
+        submodule = log
+
